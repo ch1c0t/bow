@@ -1,0 +1,24 @@
+{
+  "name": "@ch1c0t/bow",
+  "main": "./lib/main.js",
+  "exports": {
+    "require": "./lib/main.js",
+    "import": "./lib/esm.mjs"
+  },
+  "version": "0.0.0",
+  "author": "Anatoly Chernov <chertoly@gmail.com>",
+  "description": "To bow JS with objects",
+  "license": "0BSD",
+  "keywords": [
+    "coffeescript"
+  ],
+  "scripts": {
+    "build": "coffeelib build",
+    "start": "coffeelib watch",
+    "test": "jasmine"
+  },
+  "devDependencies": {
+    "coffeelib": "^0.1.0",
+    "jasmine": "^4.0.0"
+  }
+}
