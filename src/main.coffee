@@ -5,6 +5,11 @@ exports.bow = ({ init, methods }) ->
     for own key, fn of methods
       state[key] = fn.bind state
 
-    init.call state, input
+    if typeof init is 'function'
+      init.call state, input
+    else
+      for own key, fn of init
+        value = input[key] if input
+        state[key] = fn.call { value }
 
     state
