@@ -1,4 +1,4 @@
-exports.bow = ({ init, methods }) ->
+exports.bow = ({ methods, init, setup }) ->
   (input) ->
     state = {}
 
@@ -12,4 +12,7 @@ exports.bow = ({ init, methods }) ->
         value = input[key] if input
         state[key] = fn.call { value }
 
-    state
+    if typeof setup is 'function'
+      setup.call state
+    else
+      state
