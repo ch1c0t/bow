@@ -7,8 +7,8 @@ describe 'setup', ->
   it 'runs after init() and changes what a bow returns', ->
     Example = bow
       init:
-        path: -> @value
-        emitter: -> @value
+        path: -> @
+        emitter: -> @
       setup: ->
         @data = await once @emitter, 'message'
         @
@@ -21,5 +21,5 @@ describe 'setup', ->
     emitter.emit 'message', 'data object'
     example = await promise
 
-    expect(example.path).toBe 'some/path'
+    expect(example.path).toEqual 'some/path'
     expect(example.data).toEqual ['data object']

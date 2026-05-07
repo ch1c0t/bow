@@ -19,5 +19,8 @@
   },
   "devDependencies": {
     "coffeelib": "^0.6.4"
+  },
+  "dependencies": {
+    "@ch1c0t/f": "^0.0.0"
   }
 }

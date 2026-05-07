@@ -1,3 +1,5 @@
+{ f } = require '@ch1c0t/f'
+
 exports.bow = ({ methods, init, setup }) ->
   (input) ->
     state = {}
@@ -8,9 +10,10 @@ exports.bow = ({ methods, init, setup }) ->
     if typeof init is 'function'
       init.call state, input
     else
-      for own key, fn of init
-        value = input[key] if input
-        state[key] = fn.call { value }
+      fn = f in: init
+      props = fn input
+      for own key, value of props
+        state[key] = value
 
     if typeof setup is 'function'
       setup.call state

@@ -24,8 +24,8 @@ describe 'init', ->
     beforeAll ->
       @Some = bow
         init:
-          path: -> @value or "some/path"
-          port: -> @value or 8080
+          path: "some/path"
+          port: 8080
 
     it 'works when all the arguments were passed', ->
       some = @Some path: 'another/path', port: 8081
