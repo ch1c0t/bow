@@ -7,7 +7,7 @@
   },
   "version": "0.0.1",
   "author": "Anatoly Chernov <chertoly@gmail.com>",
-  "description": "To bow JS with objects",
+  "description": "To instantiate objects with specific properties",
   "license": "0BSD",
   "keywords": [
     "coffeescript"
@@ -15,10 +15,9 @@
   "scripts": {
     "build": "coffeelib build",
     "start": "coffeelib watch",
-    "test": "jasmine"
+    "test": "coffeelib test"
   },
   "devDependencies": {
-    "coffeelib": "^0.5.6",
-    "jasmine": "^6.1.0"
+    "coffeelib": "^0.6.4"
   }
 }
